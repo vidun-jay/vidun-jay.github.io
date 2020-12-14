@@ -57,9 +57,9 @@
           <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio"><i class="bx bx-camera"></i> Photography</a></li>
-          <li><a href="#services"><i class='bx bx-pencil'></i></i> Writing</a></li>
+          <li><a href="#writing"><i class='bx bx-pencil'></i></i> Writing</a></li>
+          <li><a href="#services"><i class='bx bx-folder'></i></i> Projects</a></li>
           <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-
         </ul>
       </nav><!-- .nav-menu -->
       <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
@@ -241,7 +241,7 @@
     </section><!-- End Skills Section -->
 
     <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
+    <section id="resume" class="resume section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -500,7 +500,7 @@
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title">
@@ -508,65 +508,69 @@
           <p>Photography is one of my favourite hobbies. Here are a few of my shots! All of my photos are also posted on my instagram, <a href="https://www.instagram.com/vishva.visions/" target="_blank">@vishva.visions</a></p>
         </div>
 
-       <!-- SnapWidget -->
-<!-- <iframe src="https://snapwidget.com/embed/875249" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:960px; height:1280px"></iframe> -->
-
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 <div class="elfsight-app-b7d9bb21-c987-46f8-9d2e-502c4b3b84c9"></div>
 
-            <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+            <!-- ======= Writing Section ======= -->            
+      <section id="writing" class="resume section-bg">
       <div class="container">
 
         <div class="section-title">
           <h2>Writing</h2>
           <p>This year I started writing about some of the topics that interest me and posting them on Medium. Check out some of my most recent articles!</p>
+          <div id="medium-widget"></div>
+          <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+          <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@vidunjayakody","postsPerLine":2,"limit":4,"picture":"small","fields":["description","author","claps","publishAt"],"ratio":"square"}})</script>
+      
+    </section><!-- End Writing Section -->
 
-        <div id="medium-widget"></div>
-        <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-        <script>MediumWidget.Init({renderTo: '#medium-widget', params: {"resource":"https://medium.com/@vidunjayakody/the-tea-on-iots-885c2d008297","postsPerLine":2,"limit":4,"picture":"big","fields":["description","author","claps","publishAt"],"ratio":"original"}})</script>
-      </div>
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
 
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>I think it's important to challenging yourself in order to expand your skills and knowledge. I often take on side projects whenever I find a little extra time on my hands, take a look!</p>
+        </div>
 
-        <!-- <div class="row">
+        <div class="row">
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-computer"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+            <div class="icon"><i class="icofont-man-in-glasses"></i></div>
+            <h4 class="title"><a href="https://github.com/vidun-jay/FacialRecognition.git" target= "_blank">Facial Recognition App</a></h4>
+            <p class="description">Opencv deep learning script that detects faces from a webcam stream</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+            <div class="icon"><i class="icofont-robot"></i></div>
+            <h4 class="title"><a href="https://www.loom.com/share/e6ae473ef67448b4bf842a7a858a8d74?sharedAppSource=personal_library" target= "_blank">Project Soteria</a></h4>
+            <p class="description">AI Hackathon Pitch: Using Artificial Intelligence to enhance cybersecurity</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="icofont-earth"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+            <div class="icon"><i class="icofont-image"></i></div>
+            <h4 class="title"><a href="assets/img/infographic.png" class="venobox">Infographic</a></h4>
+            <p class="description">Internet safety best practices and tips infographic</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="icofont-image"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            <div class="icon"><i class="icofont-billiard-ball"></i></div>
+            <h4 class="title"><a href="https://github.com/vidun-jay/DERP.git" target= "_blank">D.E.R.P.</a></h4>
+            <p class="description"><i>Decision Evaluation & Review Protocol</i>, an 8-ball terminal application written in python</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="icofont-settings"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+            <div class="icon"><i class="icofont-ui-messaging"></i></div>
+            <h4 class="title"><a href="https://github.com/vidun-jay/SpamBot.git" target= "_blank">SpamBot</a></h4>
+            <p class="description">Autotexter that automates text-sending & spamming messages</p>
           </div>
           <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="icofont-tasks-alt"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+            <div class="icon"><i class="icofont-video-clapper"></i></div>
+            <h4 class="title"><a href="https://youtu.be/Au0KdB5SfzM" target="_blank">Internet Security (VIDEO)</a></h4>
+            <p class="description">Communications Technology assignment outlining the risks of cyber attacks</p>
           </div>
-        </div> -->
-
+        </div>
       </div>
-    </section><!-- End Services Section -->
-        
+    </section><!-- End Services Section -->    
+           
     <!-- ======= Contact Section ======= -->
 
-    <section id="contact" class="contact">
+    <section id="contact" class="skills section-bg">
       <div class="container">
 
         <div class="section-title">
