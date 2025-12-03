@@ -1,509 +1,688 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- <meta name="google-site-verification" content="rMMiuXeFmyE3um9oxgRimvq8TRdRcG9gn0qB5tXoDJg" /> -->
-  <meta charset="utf-8">
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Vidun Jayakody | Portfolio</title>
-  <meta
-    content="Hey 👋🏽, thank you for visiting my website! I am a third year computer science student at Carleton University streaming in Cybersecurity. I'm super passionate about all things cybersecurity, from incident response to penetration testing to network analysis. I'm also interested in Cloud Infrastructure, Artificial Intelligence, and Blockchain."
-    name="description">
-  <meta content="" name="keywords">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidun Jayakody | Site Reliability Engineer</title>
+  <meta name="description" content="Site Reliability Engineer at Cisco, specializing in cloud infrastructure, Kubernetes, and cybersecurity. Building reliable, scalable systems.">
+  <meta name="keywords" content="SRE, Site Reliability Engineer, DevOps, Kubernetes, AWS, Terraform, Cybersecurity">
+  
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <div class="loader_bg">
-    <div class="loader"></div>
-  </div>
+  <!-- ======= Navigation ======= -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#hero" class="nav__logo">VJ</a>
+      
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <img src="assets/img/profile-img.png" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Vidun Jayakody</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://medium.com/@vidunjayakody" target="_blank" class="twitter"><i class="bx bxl-medium"></i></a>
-          <a href="https://github.com/vidun-jay" target="_blank" class="facebook"><i class="bx bxl-github"></i></a>
-          <a href="https://www.instagram.com/vishva.visions/" target="_blank" class="instagram"><i
-              class="bx bxl-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/vidun-jayakody-5860471b7/" target="_blank" class="linkedin"><i
-              class="bx bxl-linkedin"></i></a>
+      <div class="nav__menu" id="nav-menu" role="navigation">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#hero" class="nav__link active">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#resume" class="nav__link">Resume</a></li>
+          <li class="nav__item"><a href="#articles" class="nav__link">Articles</a></li>
+          <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+          <li class="nav__item"><a href="#photography" class="nav__link">Photography</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+        
+        <div class="nav__social">
+          <a href="https://www.linkedin.com/in/vidunjayakody/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://github.com/vidun-jay/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <i class="bx bxl-github"></i>
+          </a>
+          <a href="https://medium.com/@vidunjayakody/" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">
+            <i class="bx bxl-medium"></i>
+          </a>
+          <a href="https://www.instagram.com/vishva.visions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+            <i class="bx bxl-instagram"></i>
+          </a>
         </div>
       </div>
-
-      <nav class="nav-menu">
-        <ul>
-          <li class="#hero"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#articles"><i class='bx bx-pencil'></i></i> Articles</a></li>
-          <li><a href="#projects"><i class='bx bx-folder'></i></i> Projects</a></li>
-          <li><a href="#portfolio"><i class="bx bx-camera"></i> Photography</a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-      <!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
-    </div>
+    </nav>
   </header>
-  <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
-      <h1>Vidun Jayakody</h1>
-      <p><span class="typed" data-typed-items="Site Reliability Engineer, cybersecurity enthusiast, photographer"></span></p>
-
+  <section id="hero" class="hero">
+    <div class="hero__bg">
+      <div class="hero__gradient"></div>
+      <div class="hero__grid"></div>
+    </div>
+    
+    <div class="hero__content container">
+      <div class="hero__text reveal">
+        <span class="hero__greeting">Hello, I'm</span>
+        <h1 class="hero__title">Vidun Jayakody</h1>
+        <div class="hero__roles">
+          <span class="hero__role" id="typed-text"></span>
+          <span class="hero__cursor">|</span>
+        </div>
+        <p class="hero__description">
+          Building reliable, scalable infrastructure at the intersection of security and operations.
+        </p>
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--primary">Get in Touch</a>
+          <a href="#about" class="btn btn--outline">Learn More</a>
+        </div>
+      </div>
+      
+      <div class="hero__scroll">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
     </div>
   </section>
-  <!-- End Hero -->
 
+  <!-- ======= Main Content ======= -->
   <main id="main">
-
+    
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
       <div class="container">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>
-            Hey 👋🏽, thanks for stopping by! I'm a recent Computer Science graduate currently working at Cisco as a Site Reliability Engineer on the <a href="https://www.cisco.com/c/en/us/products/security/xdr/talk-to-an-expert.html">Cisco XDR</a> team — Cisco’s threat detection and response platform. I enjoy diving into the operational side of engineering, where performance, reliability, and security all intersect. Outside of infrastructure, I stay curious about cloud architecture, observability, and the evolving threat landscape in cybersecurity. My current tech stack includes AWS, Terraform, Kubernetes, Python, Bash, and Datadog — and I’m always learning more. Keep scrolling to see what I’ve built, where I’ve worked, and what I can bring to your team.
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3" data-aos="fade-right">
-            <img src="assets/img/profile-img.png" class="img-fluid" alt="">
+        <header class="section__header reveal">
+          <span class="section__tag">Introduction</span>
+          <h2 class="section__title">About Me</h2>
+        </header>
+        
+        <div class="about__content">
+          <div class="about__image reveal">
+            <div class="about__image-wrapper">
+              <img src="assets/img/profile-img.png" alt="Vidun Jayakody" loading="lazy">
+              <div class="about__image-border"></div>
+            </div>
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> <span>(819) 702-2433</span></li>
-                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> <span>Ottawa, ON</span></li>
-                  <li><i class="icofont-rounded-right"></i> <strong>Email:</strong> <span>vidunvj@gmail.com</span></li>
-                </ul>
+          
+          <div class="about__text reveal">
+            <p class="about__intro">
+              Hey 👋🏽, thanks for stopping by! I'm a recent Computer Science graduate currently working at Cisco as a Site Reliability Engineer on the <a href="https://www.cisco.com/c/en/us/products/security/xdr/talk-to-an-expert.html" target="_blank" rel="noopener noreferrer">Cisco XDR</a> team — Cisco's threat detection and response platform.
+            </p>
+            <p>
+              I enjoy diving into the operational side of engineering, where performance, reliability, and security all intersect. Outside of infrastructure, I stay curious about cloud architecture, observability, and the evolving threat landscape in cybersecurity.
+            </p>
+            <p>
+              My current tech stack includes AWS, Terraform, Kubernetes, Python, Bash, Datadog, and Splunk, and I'm always learning more. Keep scrolling to see what I've built, where I've worked, and what I can bring to your team.
+            </p>
+            
+            <div class="about__info">
+              <div class="about__info-item">
+                <i class="bx bx-envelope"></i>
+                <div>
+                  <span class="about__info-label">Email</span>
+                  <a href="mailto:vidunvj@gmail.com">vidunvj@gmail.com</a>
+                </div>
               </div>
-              <div class="col-lg-6">
+              <div class="about__info-item">
+                <i class="bx bx-phone"></i>
+                <div>
+                  <span class="about__info-label">Phone</span>
+                  <a href="tel:4083335286">(408) 333-5286</a>
+                </div>
+              </div>
+              <div class="about__info-item">
+                <i class="bx bx-map"></i>
+                <div>
+                  <span class="about__info-label">Location</span>
+                  <span>San Jose, CA</span>
+                </div>
               </div>
             </div>
-            <p>
-              I am an innovative and passionate computer science student looking to refine and build knowledge in
-              computer science and cybersecurity.
-            </p>
           </div>
         </div>
-
       </div>
-      <!-- End About Section -->
-
     </section>
 
     <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume section-bg">
+    <section id="resume" class="section resume">
       <div class="container">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p> To download a <strong>full PDF copy</strong> of my resume, <a href="Vidun_Jayakody_Resume.pdf" download>click here.</a>
+        <header class="section__header reveal">
+          <span class="section__tag">Qualifications</span>
+          <h2 class="section__title">Resume</h2>
+          <p class="section__description">
+            To download a <strong>full PDF copy</strong> of my resume, 
+            <a href="Vidun_Jayakody_Resume.pdf" download class="link--accent">click here</a>.
           </p>
-        </div>
+        </header>
 
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
-
-            <h3 class="resume-title">Education</h3>
-
-            <div class="resume-item">
-              <h4>Bachelor of Computer Science</h4>
-              <h5>2021 - 2025</h5>
-              <p><em>1125 Colonel By Dr, Ottawa, ON K1S 5B6</em></p>
-              <li>Cybersecurity Stream</li>
-              <li>Accepted on President's Scholar's scholarship</li>
+        <div class="resume__grid">
+          <!-- Left Column -->
+          <div class="resume__column">
+            <!-- Education -->
+            <div class="resume__block reveal">
+              <h3 class="resume__block-title">
+                <i class="bx bx-book-open"></i>
+                Education
+              </h3>
+              <div class="timeline">
+                <div class="timeline__item">
+                  <div class="timeline__marker"></div>
+                  <div class="timeline__content">
+                    <h4 class="timeline__title">Bachelor of Computer Science</h4>
+                    <span class="timeline__date">2021 - 2025</span>
+                    <p class="timeline__location">Carleton University, Ottawa, ON</p>
+                    <ul class="timeline__details">
+                      <li>Cybersecurity Stream</li>
+                      <li>President's Scholar's Scholarship</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h3 class="resume-title">Skills</h3>
-            <div class="resume-item">
-              <h4>Platforms</h4>
-              <p><em>VMWare, Linux, Cisco, Windows Server, Metasploit, Checkpoint Firewall</em></p>
-
-              <h4>Technologies</h4>
-              <p><em>Docker, Kubernetes, GitHub, AWS, Azure, ESXi, OpenStack</em></p>
-
-              <h4>Standards</h4>
-              <p><em>TCP/IP, OSPF, VLAN, VPN, IP/SEC, IPv6, TACACS/RADIUS, ACL, DNS, HTTP</em></p>
-
-              <h4>Languages</h4>
-              <p><em>Java, Python, C/C++, Bash, yaml, HTML/CSS, Ansible, Terraform</em></p>
-
-              <h4>Soft Skills</h4>
-              <p><em>Problem-solving, teamwork, communication, analytical thinking, initiative</em></p>
+            <!-- Skills -->
+            <div class="resume__block reveal">
+              <h3 class="resume__block-title">
+                <i class="bx bx-code-alt"></i>
+                Skills
+              </h3>
+              
+              <div class="skills">
+                <div class="skills__category">
+                  <h4 class="skills__category-title">Platforms</h4>
+                  <div class="skills__tags">
+                    <span class="skill-tag">VMWare</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Cisco</span>
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Metasploit</span>
+                    <span class="skill-tag">Checkpoint Firewall</span>
+                  </div>
+                </div>
+                
+                <div class="skills__category">
+                  <h4 class="skills__category-title">Technologies</h4>
+                  <div class="skills__tags">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">ESXi</span>
+                    <span class="skill-tag">OpenStack</span>
+                  </div>
+                </div>
+                
+                <div class="skills__category">
+                  <h4 class="skills__category-title">Standards</h4>
+                  <div class="skills__tags">
+                    <span class="skill-tag">TCP/IP</span>
+                    <span class="skill-tag">OSPF</span>
+                    <span class="skill-tag">VLAN</span>
+                    <span class="skill-tag">VPN</span>
+                    <span class="skill-tag">IPSec</span>
+                    <span class="skill-tag">IPv6</span>
+                    <span class="skill-tag">TACACS/RADIUS</span>
+                    <span class="skill-tag">ACL</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">HTTP</span>
+                  </div>
+                </div>
+                
+                <div class="skills__category">
+                  <h4 class="skills__category-title">Languages</h4>
+                  <div class="skills__tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">Bash</span>
+                    <span class="skill-tag">YAML</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">Terraform</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h3 class="resume-title">Certifications</h3>
-            <div class="resume-item">
-              <h4>Cisco Certified Network Associate (CCNA)</h4>
-              <h5>2022</h5>
+            <!-- Certifications -->
+            <div class="resume__block reveal">
+              <h3 class="resume__block-title">
+                <i class="bx bx-certification"></i>
+                Certifications
+              </h3>
+              <div class="certification">
+                <div class="certification__badge">
+                  <i class="bx bx-check-shield"></i>
+                </div>
+                <div class="certification__info">
+                  <h4 class="certification__title">Cisco Certified Network Associate (CCNA)</h4>
+                  <span class="certification__date">2022</span>
+                </div>
+              </div>
             </div>
-
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Most Recent Experience</h3>
 
-            <div class="resume-item">
-              <h4>Site Reliability Engineer</h4>
-              <h5>May 2023 - Present</h5>
-              <p><em>Cisco, (Remote)</em></p>
-              <ul>
-                <li> Maintained and enhanced Infrastructure-as-Code (IaC) Terraform modules for scalable, secure AWS environments</li>
-                <li> Led bi-weekly Agile release cycles, coordinating with developers and QA to deploy production releases and hotfixes</li>
-                <li> Automated deployment pipelines using Python and Bash, improving CI/CD speed and reliability</li>
-                <li> Operated and supported Kubernetes clusters, managing Helm charts and container lifecycle</li>
-                <li> Investigated and triaged Datadog alerts, improving system reliability and reducing incident response times</li>
-                <li> Managed high-availability MongoDB clusters, performing scaling, backup, and performance tuning</li>
-                <li> Coordinated access provisioning/de-provisioning, integrating with internal ITSM tools like JIRA and Confluence</li>
-                <li> Documented SRE processes, runbooks, and postmortems to ensure team autonomy and reduce bus factor</li>
-              </ul>
+          <!-- Right Column - Experience -->
+          <div class="resume__column">
+            <div class="resume__block reveal">
+              <h3 class="resume__block-title">
+                <i class="bx bx-briefcase"></i>
+                Experience
+              </h3>
+              
+              <div class="timeline">
+                <div class="timeline__item">
+                  <div class="timeline__marker timeline__marker--active"></div>
+                  <div class="timeline__content">
+                    <h4 class="timeline__title">Site Reliability Engineer</h4>
+                    <span class="timeline__date">May 2023 - Present</span>
+                    <p class="timeline__company">Cisco <span class="timeline__location-badge">Remote</span></p>
+                    <ul class="timeline__details">
+                      <li>Maintained and enhanced Infrastructure-as-Code (IaC) Terraform modules for scalable, secure AWS environments</li>
+                      <li>Led bi-weekly Agile release cycles, coordinating with developers and QA to deploy production releases and hotfixes</li>
+                      <li>Automated deployment pipelines using Python and Bash, improving CI/CD speed and reliability</li>
+                      <li>Operated and supported Kubernetes clusters, managing Helm charts and container lifecycle</li>
+                      <li>Investigated and triaged Datadog alerts, improving system reliability and reducing incident response times</li>
+                      <li>Managed high-availability MongoDB clusters, performing scaling, backup, and performance tuning</li>
+                      <li>Coordinated access provisioning/de-provisioning, integrating with internal ITSM tools like JIRA and Confluence</li>
+                      <li>Documented SRE processes, runbooks, and postmortems to ensure team autonomy and reduce bus factor</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline__item">
+                  <div class="timeline__marker"></div>
+                  <div class="timeline__content">
+                    <h4 class="timeline__title">Systems Administrator & Software Developer</h4>
+                    <span class="timeline__date">Apr 2022 - Apr 2023</span>
+                    <p class="timeline__company">Government of Canada <span class="timeline__location-badge">Remote</span></p>
+                    <ul class="timeline__details">
+                      <li>Used Terraform and Ansible to automate cloud infrastructure across AWS and Azure</li>
+                      <li>Deployed containerized apps with Docker and orchestrated services via Kubernetes</li>
+                      <li>Built CI/CD pipelines using GitLab CI with static analysis and automated deployments</li>
+                      <li>Developed RPA bots to streamline HR workflows and reduce manual errors</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="timeline__item">
+                  <div class="timeline__marker"></div>
+                  <div class="timeline__content">
+                    <h4 class="timeline__title">Network Security Automation Intern</h4>
+                    <span class="timeline__date">Jan 2022 - Apr 2022</span>
+                    <p class="timeline__company">Nokia Corporation <span class="timeline__location-badge">Remote</span></p>
+                    <ul class="timeline__details">
+                      <li>Developed automated hardening scripts and Ansible playbooks for Nokia's Network Services Platform</li>
+                      <li>Conducted testing on RHEL environments, contributing to secure deployment blueprints</li>
+                      <li>Participated in Agile ceremonies and tracked sprint progress through Microsoft Teams</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div class="resume-item">
-              <h4>Systems Administrator (Cloud Defense)</h4>
-              <h5>Jan 2023 - Apr 2023</h5>
-              <p><em>Government of Canada, (Remote)</em></p>
-              <ul>
-                <li> Used Terraform and Ansible to automate cloud infrastructure across AWS and Azure (IaC approach)</li>
-                <li> Performed system monitoring, configuration management, and SLA compliance checks</li>
-                <li> Managed internal tickets and change requests through JIRA and Outlook shared mailboxes</li>
-              </ul>
-            </div>
-
-            <!-- <div class="resume-item">
-              <h4>Software Developer</h4>
-              <h5>Sep 2022 - Dec 2022</h5>
-              <p><em>Government of Canada, (Remote)</em></p>
-              <ul>
-                <li>Automated HR workflows using Robotic Process Automation</li>
-                <li>Wrote in-depth process design document outlining automation scope, behaviour, process diagram, etc.</li>
-                <li>Increased efficiency and accuracy within the HR department, allowing for a more streamlined and effective work process</li>
-              </ul>
-            </div> -->
-
-            <div class="resume-item">
-              <h4>Systems Administrator</h4>
-              <h5>Apr 2022 - Aug 2022</h5>
-              <p><em>Government of Canada, (Remote)</em></p>
-              <ul>
-                <li> Deployed containerized applications using Docker and orchestrated services via Docker Compose and Kubernetes</li>
-                <li> Built CI/CD pipelines using GitLab CI, integrating static code analysis and automated deployments</li>
-                <li> Set up Ingress controllers and automated DNS management with ExternalDNS for Kubernetes clusters</li>
-              </ul>
-
-            <!-- <div class="resume-item">
-              <h4>Network Security Automation Practice</h4>
-              <h5>Jan 2022 - Apr 2022</h5>
-              <p><em>Internship, Nokia Corporation (Remote)</em></p>
-              <ul>
-                <li>Helped develop security practice service offering for Nokia Network Services Platform (NSP)</li>
-                <li>Creating high-quality deliverables and documentation</li>
-                <li>Working with existing hardening script to get it into deployment-in-the-field state for regional use
-                </li>
-                <li>Using RHEL lab for testing and demoing hardening script</li>
-                <li>Tracking & maintaining progress/updates using Microsoft Office (MS Teams, Excel, Outlook,
-                  Powerpoint)</li>
-                <li>Working with languages like ansible, bash, yaml and python for security automation</li>
-              </ul>
-            </div> -->
           </div>
         </div>
-
       </div>
     </section>
-    <!-- End Resume Section -->
 
     <!-- ======= Articles Section ======= -->
-    <section id="articles" class="portfolio">
+    <section id="articles" class="section articles">
       <div class="container">
+        <header class="section__header reveal">
+          <span class="section__tag">Writing</span>
+          <h2 class="section__title">Articles</h2>
+          <p class="section__description">
+            This year I started writing about some of the topics that interest me and posting them on Medium. Check out some of my most recent articles!
+          </p>
+        </header>
 
-        <div class="section-title">
-          <h2>Articles</h2>
-          <p>This year I started writing about some of the topics that interest me and posting them on Medium. Check out
-            some of my most recent articles!</p>
+        <div class="articles__grid">
+          <a href="https://vidunjayakody.medium.com/how-does-the-internet-work-9b0f9bbfd4ba" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+            <div class="article-card__image">
+              <img src="assets/img/articles/article-1.jpeg" alt="How does the Internet work?" loading="lazy">
+              <div class="article-card__overlay">
+                <i class="bx bx-link-external"></i>
+              </div>
+            </div>
+            <div class="article-card__content">
+              <h3 class="article-card__title">How exactly does the Internet Work?</h3>
+              <span class="article-card__subtitle">For the average Joe</span>
+            </div>
+          </a>
+
+          <a href="https://vidunjayakody.medium.com/what-the-fork-is-a-blockchain-fe2f8361035b" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+            <div class="article-card__image">
+              <img src="assets/img/articles/article-2.jpeg" alt="What the Fork is a Blockchain?" loading="lazy">
+              <div class="article-card__overlay">
+                <i class="bx bx-link-external"></i>
+              </div>
+            </div>
+            <div class="article-card__content">
+              <h3 class="article-card__title">What the Fork is a Blockchain?</h3>
+              <span class="article-card__subtitle">Understanding distributed ledgers</span>
+            </div>
+          </a>
+
+          <a href="https://vidunjayakody.medium.com/the-tea-on-iots-885c2d008297" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+            <div class="article-card__image">
+              <img src="assets/img/articles/article-3.jpeg" alt="The Tea on IoTs" loading="lazy">
+              <div class="article-card__overlay">
+                <i class="bx bx-link-external"></i>
+              </div>
+            </div>
+            <div class="article-card__content">
+              <h3 class="article-card__title">The Tea on IoTs</h3>
+              <span class="article-card__subtitle">Internet of Things explained</span>
+            </div>
+          </a>
+
+          <a href="https://vidunjayakody.medium.com/dopamine-detox-hacking-your-brain-to-work-for-you-f453f5153557" target="_blank" rel="noopener noreferrer" class="article-card reveal">
+            <div class="article-card__image">
+              <img src="assets/img/articles/article-4.jpeg" alt="Dopamine Detox" loading="lazy">
+              <div class="article-card__overlay">
+                <i class="bx bx-link-external"></i>
+              </div>
+            </div>
+            <div class="article-card__content">
+              <h3 class="article-card__title">Dopamine Detox</h3>
+              <span class="article-card__subtitle">Hacking your Brain to Work for You</span>
+            </div>
+          </a>
         </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-5 col-md-6 portfolio-item filter-app">
-            <a href="https://vidunjayakody.medium.com/how-does-the-internet-work-9b0f9bbfd4ba" target="_blank"><img
-                src="assets/img/articles/article-1.jpeg" class="img-fluid" alt=""></a>
-            <div class="portfolio-wrap">
-              <div class="portfolio-links">
-                <a href="https://vidunjayakody.medium.com/how-does-the-internet-work-9b0f9bbfd4ba" target="_blank"
-                  title="How exactly does the Internet Work? (for the average Joe)"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5 col-md-6 portfolio-item filter-web">
-            <a href="https://vidunjayakody.medium.com/what-the-fork-is-a-blockchain-fe2f8361035b" target="_blank"><img
-                src="assets/img/articles/article-2.jpeg" class="img-fluid" alt=""></a>
-            <div class="portfolio-wrap">
-              <div class="portfolio-links">
-                <a href="https://vidunjayakody.medium.com/what-the-fork-is-a-blockchain-fe2f8361035b" target="_blank"
-                  title="What the Fork is a Blockchain?"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5 col-md-6 portfolio-item filter-web">
-            <a href="https://vidunjayakody.medium.com/the-tea-on-iots-885c2d008297" target="_blank"><img
-                src="assets/img/articles/article-3.jpeg" class="img-fluid" alt=""></a>
-            <div class="portfolio-wrap">
-              <div class="portfolio-links">
-                <a href="https://vidunjayakody.medium.com/the-tea-on-iots-885c2d008297" target="_blank"
-                  title="The Tea on IoTs?"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-5 col-md-6 portfolio-item filter-web">
-            <a href="https://vidunjayakody.medium.com/dopamine-detox-hacking-your-brain-to-work-for-you-f453f5153557"
-              target="_blank"><img src="assets/img/articles/article-4.jpeg" class="img-fluid" alt=""></a>
-            <div class="portfolio-wrap">
-              <div class="portfolio-links">
-                <a href="https://vidunjayakody.medium.com/dopamine-detox-hacking-your-brain-to-work-for-you-f453f5153557"
-                  target="_blank" title="Dopamine Detox — Hacking your Brain to Work for You"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </section>
-    <!-- End Articles Section -->
 
     <!-- ======= Projects Section ======= -->
-    <section id="projects" class="services section-bg">
+    <section id="projects" class="section projects">
       <div class="container">
+        <header class="section__header reveal">
+          <span class="section__tag">Portfolio</span>
+          <h2 class="section__title">Projects</h2>
+          <p class="section__description">
+            I think it's important to challenge yourself to expand your skills and knowledge. I frequently take on side projects whenever I find a little extra time on my hands, take a look!
+          </p>
+        </header>
 
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>I think it's important to challenge yourself to expand your skills and knowledge. I frequently take on side
-            projects whenever I find a little extra time on my hands, take a look!</p>
-        </div>
+        <div class="projects__grid">
+          <a href="https://github.com/vidun-jay/FacialRecognition.git" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-face"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Facial Recognition App</h3>
+              <p class="project-card__description">OpenCV deep learning script that detects faces from a webcam stream</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-man-in-glasses"></i></div>
-            <h4 class="title"><a href="https://github.com/vidun-jay/FacialRecognition.git" target="_blank">Facial
-                Recognition App</a></h4>
-            <p class="description">Opencv deep learning script that detects faces from a webcam stream</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="icofont-youtube-play"></i></div>
-            <h4 class="title"><a href="https://www.youtube.com/watch?v=mGL2E3QkAu4" target="_blank">DHCP Explained</a>
-            </h4>
-            <p class="description">YouTube video explaining how to configure DHCP on a Cisco Router</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-coins"></i></div>
-            <h4 class="title"><a href="https://github.com/vidun-jay/Cryptocurrency" target="_blank">Vidun-coin</a></h4>
-            <p class="description">Custom cryptocurrency I made to learn how blockchain works and what the code for one
-              looks like.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="icofont-robot"></i></div>
-            <h4 class="title"><a
-                href="https://www.loom.com/share/e6ae473ef67448b4bf842a7a858a8d74?sharedAppSource=personal_library"
-                target="_blank">Project Soteria</a></h4>
-            <p class="description">AI Hackathon Pitch: Using Artificial Intelligence to enhance cybersecurity</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="icofont-image"></i></div>
-            <h4 class="title"><a href="assets/img/infographic.png" class="venobox">Infographic</a></h4>
-            <p class="description">Internet safety best practices and tips infographic</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="icofont-ui-messaging"></i></div>
-            <h4 class="title"><a href="https://github.com/vidun-jay/SpamBot.git" target="_blank">SpamBot</a></h4>
-            <p class="description">Python autotexter that automates text-sending & spamming messages</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="icofont-dashboard-web"></i></div>
-            <h4 class="title"><a href="https://reverroads.github.io" target="_blank">Rever Website</a></h4>
-            <p class="description">
-              Moonshot company hackathon website for my team's company, <i>Rever</i>. Our team researched how to
-              leverage self-healing technology to minimize road construction in Canada and cut costs in the process.</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="icofont-invisible"></i></div>
-            <h4 class="title"><a href="https://app.hackthebox.com/profile/470794" target="_blank">HackTheBox Profile</a>
-            </h4>
-            <p class="description"><i>Hack The Box is a massive, online cybersecurity training platform, allowing
-                individuals, companies, universities and all kinds of organizations around the world to level up their
-                hacking skills.</i></p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="icofont-video-clapper"></i></div>
-            <h4 class="title"><a href="https://youtu.be/Au0KdB5SfzM" target="_blank">Internet Security (VIDEO)</a></h4>
-            <p class="description">Communications Technology assignment outlining the risks of cyber attacks</p>
-          </div>
+          <a href="https://www.youtube.com/watch?v=mGL2E3QkAu4" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bxl-youtube"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">DHCP Explained</h3>
+              <p class="project-card__description">YouTube video explaining how to configure DHCP on a Cisco Router</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
 
+          <a href="https://github.com/vidun-jay/Cryptocurrency" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-bitcoin"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Vidun-coin</h3>
+              <p class="project-card__description">Custom cryptocurrency I made to learn how blockchain works and what the code for one looks like</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="https://www.loom.com/share/e6ae473ef67448b4bf842a7a858a8d74?sharedAppSource=personal_library" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-bot"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Project Soteria</h3>
+              <p class="project-card__description">AI Hackathon Pitch: Using Artificial Intelligence to enhance cybersecurity</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="assets/img/infographic.png" class="project-card reveal" data-lightbox>
+            <div class="project-card__icon">
+              <i class="bx bx-image"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Infographic</h3>
+              <p class="project-card__description">Internet safety best practices and tips infographic</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="https://github.com/vidun-jay/SpamBot.git" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-message-dots"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">SpamBot</h3>
+              <p class="project-card__description">Python autotexter that automates text-sending & spamming messages</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="https://reverroads.github.io" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-globe"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Rever Website</h3>
+              <p class="project-card__description">Moonshot company hackathon website researching self-healing technology to minimize road construction in Canada</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="https://app.hackthebox.com/profile/470794" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-terminal"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">HackTheBox Profile</h3>
+              <p class="project-card__description">Hack The Box is a massive, online cybersecurity training platform for honing hacking skills</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
+
+          <a href="https://youtu.be/Au0KdB5SfzM" target="_blank" rel="noopener noreferrer" class="project-card reveal">
+            <div class="project-card__icon">
+              <i class="bx bx-video"></i>
+            </div>
+            <div class="project-card__content">
+              <h3 class="project-card__title">Internet Security (VIDEO)</h3>
+              <p class="project-card__description">Communications Technology assignment outlining the risks of cyber attacks</p>
+            </div>
+            <div class="project-card__arrow">
+              <i class="bx bx-right-arrow-alt"></i>
+            </div>
+          </a>
         </div>
       </div>
     </section>
-    <!-- End projects Section -->
 
     <!-- ======= Photography Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="photography" class="section photography">
       <div class="container">
+        <header class="section__header reveal">
+          <span class="section__tag">Creative</span>
+          <h2 class="section__title">Photography</h2>
+          <p class="section__description">
+            Although tech is a big part of my life, it's not all I do. Photography is one of my favourite hobbies. My full gallery is also available on Instagram at 
+            <a href="https://www.instagram.com/vishva.visions/" target="_blank" rel="noopener noreferrer" class="link--accent">@vishva.visions</a>
+          </p>
+        </header>
 
-        <div class="section-title">
-          <h2>Photography</h2>
-          <div class="section" data-aos="fade-up">
-
-            <p>Although tech is a big part of my life, it's not all I do. Photography, for example, is one of my
-              favourite hobbies. Here are a few of my shots! My full gallery is also available on instagram, at <a
-                href="https://www.instagram.com/vishva.visions/" target="_blank">@vishva.visions</a></p>
-            <br></br>
-
-            <!-- Place <div> tag where you want the feed to appear -->
-            <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank"
-                class="crt-logo crt-tag">Powered by Curator.io</a></div>
-            <script type="text/javascript">
-              /* curator-feed-default-feed-layout */
-              (function () {
-                var i, e, d = document, s = "script"; i = d.createElement("script"); i.async = 1; i.charset = "UTF-8";
-                i.src = "https://cdn.curator.io/published/e361d81b-4e0f-4051-b1e2-fc412d2d50de.js";
-                e = d.getElementsByTagName(s)[0]; e.parentNode.insertBefore(i, e);
-              })();
-            </script>
-
+        <div class="photography__gallery reveal">
+          <!-- Curator.io Integration -->
+          <div id="curator-feed-default-feed-layout">
+            <a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a>
           </div>
         </div>
+        
+        <div class="photography__cta reveal">
+          <a href="https://www.instagram.com/vishva.visions/" target="_blank" rel="noopener noreferrer" class="btn--instagram">
+            <i class="bx bxl-instagram"></i>
+            <span>Follow @vishva.visions</span>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <section id="contact" class="section contact">
       <div class="container">
+        <header class="section__header reveal">
+          <span class="section__tag">Connect</span>
+          <h2 class="section__title">Contact Me</h2>
+          <p class="section__description">
+            If there is anything at all you would like to discuss or learn more about, please feel free to reach out! I will respond as soon as I can.
+          </p>
+        </header>
 
-        <div class="section px-2 px-lg-4 pb-4 pt-5 mb-5" id="contact">
-          <div class="container-narrow">
-            <div class="section-title">
-              <h2>Contact Me</h2>
+        <div class="contact__grid">
+          <div class="contact__form-wrapper reveal">
+            <form action="https://formspree.io/f/mzbwdyeo" method="POST" class="contact__form">
+              <div class="form__group">
+                <label for="name" class="form__label">Name *</label>
+                <input type="text" id="name" name="name" class="form__input" required autocomplete="name">
+              </div>
+              
+              <div class="form__group">
+                <label for="email" class="form__label">Email *</label>
+                <input type="email" id="email" name="_replyto" class="form__input" required autocomplete="email">
+              </div>
+              
+              <div class="form__group">
+                <label for="message" class="form__label">Message *</label>
+                <textarea id="message" name="message" class="form__textarea" rows="5" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn--primary btn--full">
+                <span>Send Message</span>
+                <i class="bx bx-send"></i>
+              </button>
+            </form>
+          </div>
 
-              <div class="row">
-                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="bg-light my-2 p-3 pt-2">
-                    <form action=https://formspree.io/f/mzbwdyeo method="POST">
-                      <div class="form-group my-2">
-                        <label for="name" class="form-label fw-bolder">Name*</label>
-                        <input class="form-control" type="text" id="name" name="name" required>
-                      </div>
-                      <div class="form-group my-2">
-                        <label for="email" class="form-label fw-bolder">Email*</label>
-                        <input class="form-control" type="email" id="email" name="_replyto" required>
-                      </div>
-                      <div class="form-group my-2">
-                        <label for="message" class="form-label fw-bolder">Message*</label>
-                        <textarea class="form-control" style="resize: none;" id="message" name="message" rows="4"
-                          required></textarea>
-                      </div>
-                      <button class="btn btn-primary mt-2" type="submit">Send</button>
-                    </form>
-                  </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
-                  <div class="mt-3 px-1">
-                    <p>If there is anything at all you would like to discuss or learn more about, please feel free to
-                      reach out! I will respond as soon as I can.<br></br></p>
-                  </div>
-                  <div class="mt-53 px-1">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="pb-1">Email:</div>
-                      </div>
-                      <div class="col-sm-10">
-                        <a href="mailto: vidunvj@gmail.com" target="_blank">vidunvj@gmail.com</a>
-                      </div>
-                      <div class="col-sm-2">
-                        <div class="pb-1">Phone:</div>
-                      </div>
-                      <div class="col-sm-10">
-                        <a href="tel:8197022433">(819) 702-2433</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div class="contact__info reveal">
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <i class="bx bx-envelope"></i>
+              </div>
+              <div class="contact__info-content">
+                <h3>Email</h3>
+                <a href="mailto:vidunvj@gmail.com">vidunvj@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <i class="bx bx-phone"></i>
+              </div>
+              <div class="contact__info-content">
+                <h3>Phone</h3>
+                <a href="tel:8197022433">(819) 702-2433</a>
+              </div>
+            </div>
+
+            <div class="contact__info-card">
+              <div class="contact__info-icon">
+                <i class="bx bx-map"></i>
+              </div>
+              <div class="contact__info-content">
+                <h3>Location</h3>
+                <span>Ottawa, ON, Canada</span>
+              </div>
+            </div>
+
+            <div class="contact__social">
+              <h3>Follow Me</h3>
+              <div class="contact__social-links">
+                <a href="https://medium.com/@vidunjayakody" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                  <i class="bx bxl-medium"></i>
+                </a>
+                <a href="https://github.com/vidun-jay" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="bx bxl-github"></i>
+                </a>
+                <a href="https://www.instagram.com/vishva.visions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="www.linkedin.com/in/vidunjayakody/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="bx bxl-linkedin"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
-
-      </div>
       </div>
     </section>
-    <!-- End Contact Section -->
-
   </main>
-  <!-- End #main -->
 
-  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Vidun Jayakody. All rights reserved.</p>
+    </div>
+  </footer>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
+  <!-- Back to Top -->
+  <a href="#hero" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="bx bx-chevron-up"></i>
+  </a>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <script>
-    $(window).on("load", function () {
-      $(".loader_bg").fadeOut("slow");
-    })
+  <!-- Curator.io Script for Photography Gallery -->
+  <script type="text/javascript">
+    (function(){
+      var i, e, d = document, s = "script";
+      i = d.createElement("script");
+      i.async = 1;
+      i.charset = "UTF-8";
+      i.src = "https://cdn.curator.io/published/e361d81b-4e0f-4051-b1e2-fc412d2d50de.js";
+      e = d.getElementsByTagName(s)[0];
+      e.parentNode.insertBefore(i, e);
+    })();
   </script>
 
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
 </body>
-
 </html>
+

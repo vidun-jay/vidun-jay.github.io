@@ -1,193 +1,429 @@
 /**
-* Template Name: iPortfolio - v1.4.0
-* Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-!(function($) {
-  "use strict";
+ * Vidun Jayakody Portfolio - Main JavaScript
+ * Handles navigation, scroll animations, typing effect, and interactions
+ */
 
-  // Hero typed
-  if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 45,
-      backSpeed: 50,
-      backDelay: 500
-    });
-  }
+(function() {
+  'use strict';
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      e.preventDefault();
-      var target = $(this.hash);
-      if (target.length) {
+  // ============================================
+  // Utility Functions
+  // ============================================
+  
+  /**
+   * Check if user prefers reduced motion
+   */
+  const prefersReducedMotion = () => {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  };
 
-        var scrollto = target.offset().top;
+  /**
+   * Debounce function for performance
+   */
+  const debounce = (func, wait = 10) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
 
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
+  // ============================================
+  // Navigation
+  // ============================================
+  
+  const initNavigation = () => {
+    const header = document.getElementById('header');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav__link');
+    const sections = document.querySelectorAll('section[id]');
 
-        if ($(this).parents('.nav-menu, .mobile-nav').length) {
-          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-          $(this).closest('li').addClass('active');
-        }
-
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-        }
-        return false;
-      }
-    }
-  });
-
-  // Activate smooth scroll on page load with hash links in the url
-  $(document).ready(function() {
-    if (window.location.hash) {
-      var initial_nav = window.location.hash;
-      if ($(initial_nav).length) {
-        var scrollto = $(initial_nav).offset().top;
-        $('html, body').animate({
-          scrollTop: scrollto
-        }, 1500, 'easeInOutExpo');
-      }
-    }
-  });
-
-  $(document).on('click', '.mobile-nav-toggle', function(e) {
-    $('body').toggleClass('mobile-nav-active');
-    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-  });
-
-  $(document).click(function(e) {
-    var container = $(".mobile-nav-toggle");
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-      if ($('body').hasClass('mobile-nav-active')) {
-        $('body').removeClass('mobile-nav-active');
-        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
-      }
-    }
-  });
-
-  // Navigation active state on scroll
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, .mobile-nav');
-
-  $(window).on('scroll', function() {
-    var cur_pos = $(this).scrollTop() + 200;
-
-    nav_sections.each(function() {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
-
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('active');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-      }
-      if (cur_pos < 300) {
-        $(".nav-menu ul:first li:first").addClass('active');
-      }
-    });
-  });
-
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-
-  $('.back-to-top').click(function() {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 1500, 'easeInOutExpo');
-    return false;
-  });
-
-  // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
-
-  // Skills section
-  $('.skills-content').waypoint(function() {
-    $('.progress .progress-bar').each(function() {
-      $(this).css("width", $(this).attr("aria-valuenow") + '%');
-    });
-  }, {
-    offset: '80%'
-  });
-
-  // Porfolio isotope and filter
-  $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
+    // Mobile menu toggle
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
       });
-      aos_init();
-    });
 
-    // Initiate venobox (lightbox feature used in portofilo)
-    $(document).ready(function() {
-      $('.venobox').venobox();
-    });
-  });
+      // Close menu when clicking a link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
 
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      900: {
-        items: 3
-      }
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
     }
-  });
 
-  // Portfolio details carousel
-  $(".portfolio-details-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
+    // Header scroll effect
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 100) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    }, 5);
 
-  // Init AOS
-  function aos_init() {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out-back",
-      once: true
+    window.addEventListener('scroll', handleScroll);
+
+    // Active section highlighting
+    const highlightActiveSection = () => {
+      const scrollY = window.scrollY;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 150;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', debounce(highlightActiveSection, 10));
+  };
+
+  // ============================================
+  // Back to Top Button
+  // ============================================
+  
+  const initBackToTop = () => {
+    const backToTop = document.getElementById('back-to-top');
+    
+    if (!backToTop) return;
+
+    const toggleVisibility = debounce(() => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    }, 10);
+
+    window.addEventListener('scroll', toggleVisibility);
+  };
+
+  // ============================================
+  // Scroll Reveal Animations
+  // ============================================
+  
+  const initScrollReveal = () => {
+    if (prefersReducedMotion()) {
+      // If user prefers reduced motion, show all elements immediately
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
-  }
-  $(window).on('load', function() {
-    aos_init();
-  });
 
-})(jQuery);
+    revealElements.forEach(el => {
+      revealObserver.observe(el);
+    });
+  };
+
+  // ============================================
+  // Typing Effect
+  // ============================================
+  
+  const initTypingEffect = () => {
+    const typedElement = document.getElementById('typed-text');
+    
+    if (!typedElement) return;
+
+    const phrases = [
+      'Site Reliability Engineer',
+      'Cybersecurity Enthusiast',
+      'Cloud Infrastructure',
+      'Photographer'
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+
+    const typeSpeed = 80;
+    const deleteSpeed = 50;
+    const pauseTime = 2000;
+
+    const type = () => {
+      if (prefersReducedMotion()) {
+        // If reduced motion, just show the first phrase
+        typedElement.textContent = phrases[0];
+        return;
+      }
+
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isPaused) {
+        setTimeout(type, pauseTime);
+        isPaused = false;
+        isDeleting = true;
+        return;
+      }
+
+      if (isDeleting) {
+        typedElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+        }
+      } else {
+        typedElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentPhrase.length) {
+          isPaused = true;
+        }
+      }
+
+      const speed = isDeleting ? deleteSpeed : typeSpeed;
+      setTimeout(type, speed);
+    };
+
+    // Start typing after a short delay
+    setTimeout(type, 1000);
+  };
+
+  // ============================================
+  // Smooth Scroll for Anchor Links
+  // ============================================
+  
+  const initSmoothScroll = () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        if (href === '#') return;
+        
+        const target = document.querySelector(href);
+        
+        if (target) {
+          e.preventDefault();
+          
+          const headerHeight = document.getElementById('header').offsetHeight;
+          const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          
+          if (prefersReducedMotion()) {
+            window.scrollTo(0, targetPosition);
+          } else {
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  };
+
+  // ============================================
+  // Form Enhancement
+  // ============================================
+  
+  const initFormEnhancements = () => {
+    const form = document.querySelector('.contact__form');
+    
+    if (!form) return;
+
+    // Add focus styling to form groups
+    const inputs = form.querySelectorAll('.form__input, .form__textarea');
+    
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', () => {
+        input.parentElement.classList.remove('focused');
+      });
+    });
+
+    // Form submission feedback
+    form.addEventListener('submit', function(e) {
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<span>Sending...</span><i class="bx bx-loader-alt bx-spin"></i>';
+      submitBtn.disabled = true;
+      
+      // Note: The form will naturally submit to Formspree
+      // This is just visual feedback
+      
+      // Re-enable after a timeout (Formspree will redirect anyway)
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 5000);
+    });
+  };
+
+  // ============================================
+  // Skill Tags Hover Effect
+  // ============================================
+  
+  const initSkillTagsEffect = () => {
+    if (prefersReducedMotion()) return;
+
+    const skillTags = document.querySelectorAll('.skill-tag');
+    
+    skillTags.forEach(tag => {
+      tag.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      
+      tag.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  };
+
+  // ============================================
+  // Project Cards Tilt Effect (Subtle)
+  // ============================================
+  
+  const initCardEffects = () => {
+    if (prefersReducedMotion()) return;
+
+    const cards = document.querySelectorAll('.project-card, .article-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s ease';
+      });
+    });
+  };
+
+  // ============================================
+  // Keyboard Navigation Enhancement
+  // ============================================
+  
+  const initKeyboardNav = () => {
+    // Add visible focus states when using keyboard
+    let isUsingKeyboard = false;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        isUsingKeyboard = true;
+        document.body.classList.add('keyboard-nav');
+      }
+    });
+
+    document.addEventListener('mousedown', () => {
+      isUsingKeyboard = false;
+      document.body.classList.remove('keyboard-nav');
+    });
+
+    // Escape key closes mobile menu
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const navMenu = document.getElementById('nav-menu');
+        const navToggle = document.getElementById('nav-toggle');
+        
+        if (navMenu && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  };
+
+  // ============================================
+  // Lazy Loading for Images
+  // ============================================
+  
+  const initLazyLoading = () => {
+    // Native lazy loading is already in HTML via loading="lazy"
+    // This adds a fade-in effect when images load
+    
+    if (prefersReducedMotion()) return;
+
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    images.forEach(img => {
+      img.style.opacity = '0';
+      img.style.transition = 'opacity 0.3s ease';
+      
+      if (img.complete) {
+        img.style.opacity = '1';
+      } else {
+        img.addEventListener('load', function() {
+          this.style.opacity = '1';
+        });
+      }
+    });
+  };
+
+  // ============================================
+  // Initialize Everything
+  // ============================================
+  
+  const init = () => {
+    initNavigation();
+    initBackToTop();
+    initScrollReveal();
+    initTypingEffect();
+    initSmoothScroll();
+    initFormEnhancements();
+    initSkillTagsEffect();
+    initCardEffects();
+    initKeyboardNav();
+    initLazyLoading();
+
+    // Add loaded class to body for any initial animations
+    document.body.classList.add('loaded');
+  };
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+
