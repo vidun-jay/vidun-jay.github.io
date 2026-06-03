@@ -171,9 +171,9 @@
     if (!typedElement) return;
 
     const phrases = [
-      'Site Reliability Engineer',
-      'Cybersecurity Enthusiast',
-      'Cloud Infrastructure',
+      'Production Engineer',
+      'Infrastructure @ Meta',
+      'Release Engineering',
       'Photographer'
     ];
 
@@ -321,17 +321,17 @@
   };
 
   // ============================================
-  // Project Cards Tilt Effect (Subtle)
+  // Card Hover Effect
   // ============================================
-  
+
   const initCardEffects = () => {
     if (prefersReducedMotion()) return;
 
     const cards = document.querySelectorAll('.project-card, .article-card');
-    
+
     cards.forEach(card => {
       card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease';
+        this.style.transition = 'all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)';
       });
     });
   };
